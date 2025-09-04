@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "JMH Typewriter";
+  src: url("assets/fonts/jmh_typewriter/JMH Typewriter.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FiraCodeNerd";
+  src: url("assets/fonts/FiraCodeNerdFont-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+body {
+  background-color: #000000;
+  color: #eeeeee;
+  font-family: "JMH Typewriter", monospace;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 80vw;
+  overflow-x: hidden;
+  line-height: 1; 
+}
+
+.panel {
+  width: 100vw;
+  margin-top: 0.7em;
+  background-color: rgba(40,40,40,0.85);
+  border: 3px solid #333;
+  text-rendering: optimizeLegibility;
+  color: #fff;
+  position: relative;
+}
+
+pre {
+  font-family: "FiraCodeNerd", monospace;
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 90%;
+  display: inline-block;
+  background: rgba(20,20,20,0.7);
+  padding: 0.7em;
+  border-radius: 4px;
+  border-left: 2px solid #4c40ff;
+  overflow-wrap: break-word;
+}
+
+preff {
+  font-family: "FiraCodeNerd", monospace;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 90%;
+  display: inline-block;
+  background: rgba(20,20,20,0.7);
+  padding: 0.7em;
+  border-radius: 4px;
+  border-left: 2px solid #4c40ff;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  width: 90%;
+  max-width: 650px;
+  margin: 0.6em auto;
+}
