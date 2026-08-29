@@ -1,25 +1,19 @@
-/* Fonts */
 @font-face {
   font-family: "JMH Typewriter";
   src: url("assets/fonts/jmh_typewriter/JMH Typewriter.woff2") format("woff2");
   font-display: swap;
 }
 
-@font-face {
-  font-family: "FiraCodeNerd";
-  src: url("assets/fonts/FiraCodeNerdFont-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-
 body {
   background: #000;
   color: #eee;
-  font-family: "JMH Typewriter";
+  font-family: "JMH Typewriter", monospace;
   text-align: center;
   padding: 20px;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
+  text-rendering: optimizeSpeed;
 }
 
 .panel {
@@ -29,6 +23,7 @@ body {
   color: #fff;
   padding: 0.2rem;
   border: 3px solid #333;
+  contain: layout paint;
 }
 
 pre, preff {
@@ -39,26 +34,17 @@ pre, preff {
   font-size: 0.5rem;
 }
 
-preff {
-  font-family: "FiraCodeNerd";
-  font-size: 0.8rem;
-}
-
 hr {
   border: 0;
   height: 1px;
   background: #333;
-  width: 90vw;
   max-width: 800px;
-  margin: 0.3rem auto;
+
 }
 
 .crt-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: repeating-linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.15) 0px,
@@ -68,9 +54,22 @@ hr {
       );
       pointer-events: none;
       z-index: 999;
-      animation: flicker 0.15s infinite;
+      animation: flicker 0.25s infinite alternate;
+      contain: paint;
     }
 
+@keyframes flicker {
+      0% { opacity: 0.9; }
+      50% { opacity: 1; }
+      100% { opacity: 0.9; }
+    }
+    
+@media (prefers-reduced-motion: reduce) {
+  .crt-overlay {
+    animation: none;
+    opacity: 0.95;
+  }
+}
 
 .links a {
   border: 2px solid #333;
@@ -79,8 +78,8 @@ hr {
   transition: color 0.2s ease;
 }
 
-.links a:hover, a:focus {
+.links a:hover,
+.links a:focus {
   color: #6c60ff;
   text-decoration: underline;
 }
-
